@@ -60,9 +60,16 @@
                 count++;
                 catImage.innerHTML=count;
                 catImage.id = 'op';
+                
+                // 播放音效
+                let audio = new Audio('pops/pop1.mp3');
+                audio.play();
             }
             let close = () => {
-                catImage.id = 'p';
+                // 延迟 25 毫秒再切回闭嘴图片
+                setTimeout(() => {
+                    catImage.id = 'p';
+                }, 25);
             }
 
             document.addEventListener('pointerdown', addCount);
